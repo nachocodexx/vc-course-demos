@@ -1,0 +1,12 @@
+FROM debian:bullseye-slim
+
+WORKDIR app
+
+RUN echo "START A NEW CONTAINER"
+
+LABEL target="mictlanx"
+LABEL version="0.0.1"
+
+COPY ./bin/sharingnew /app/sharing
+
+CMD ["/app/sharing"]

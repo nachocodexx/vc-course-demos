@@ -1,0 +1,37 @@
+version: "3.8"
+services:
+ mictlanx-sharing-0:
+    image: nachocode/demo1
+    container_name: mictlanx-sharing-0
+    hostname: mictlanx-sharing-0
+    ports:
+      - 16000:16000
+    environment:
+      - USER_ID=1001
+      - GROUP_ID=1002
+      - BIN_NAME=sharing
+
+      - NODE_ID=mictlanx-sharing-0
+      - IP_ADDRESS=mictlanx-sharing-0
+      - SERVER_IP_ADDRESS=0.0.0.0
+      - NODE_PORT=16000
+      - API_VERSION=3
+      - APPLICATION_ID=APP_ID
+      - CLIENT_ID=CLIENT_ID
+      - SECRET=SECRET
+      - XOLO_IP_ADR=mictlanx-xolo-0
+      - XOLO_PORT=10000
+      - XOLO_MODE=off
+      - BASE_PATH=/mictlanx
+      - LOCAL_PATH=/mictlanx/local
+      - DATA_PATH=/mictlanx/data
+      - LOG_PATH=/mictlanx/log
+    volumes:
+      - /mictlanx/mictlanx-sharing-0/log:/mictlanx/log
+      - /mictlanx/mictlanx-sharing-0/local:/mictlanx/local
+      - /mictlanx/mictlanx-sharing-0/data:/mictlanx/data
+    networks:
+      - mictlanx
+networks:
+ mictlanx:
+  external: true

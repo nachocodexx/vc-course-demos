@@ -1,0 +1,61 @@
+version: '3.8'
+services:
+  mictlanx-xolo-0:
+    image: 'nachocode/mictlanx:xolo_demo2'
+    container_name: mictlanx-xolo-0
+    hostname: mictlanx-xolo-0
+    ports:
+      - '10000:10000'
+    environment:
+      - USER_ID=1001
+      - GROUP_ID=1002
+      - BIN_NAME=xolo
+      - NODE_ID=mictlanx-xolo-0
+      - IP_ADDRESS=mictlanx-xolo-0
+      - SERVER_IP_ADDRESS=0.0.0.0
+      - NODE_PORT=10000
+      - XOLO_SECRET=te0imDRjzcA2lnRfwWzxu47NyVFq7xU/XWK/l7bPHPo=
+      - BASE_PATH=/mictlanx
+      - LOCAL_PATH=/mictlanx/local
+      - DATA_PATH=/mictlanx/data
+      - LOG_PATH=/mictlanx/log
+    volumes:
+      - '/mictlanx/mictlanx-xolo-0/log:/mictlanx/log'
+      - '/mictlanx/mictlanx-xolo-0/local:/mictlanx/local'
+      - '/mictlanx/mictlanx-xolo-0/data:/mictlanx/data'
+    networks:
+      - mictlanx
+  mictlanx-sharing-0:
+    image: 'nachocode/mictlanx:sharing_demo2'
+    container_name: mictlanx-sharing-0
+    hostname: mictlanx-sharing-0
+    ports:
+      - '16000:16000'
+    environment:
+      - USER_ID=1001
+      - GROUP_ID=1002
+      - BIN_NAME=sharing
+      - NODE_ID=mictlanx-sharing-0
+      - IP_ADDRESS=mictlanx-sharing-0
+      - SERVER_IP_ADDRESS=0.0.0.0
+      - NODE_PORT=16000
+      - API_VERSION=3
+      - APPLICATION_ID=test_VNEq6RBeiKNyD8wu6WJSI73w2Xajxk6y
+      - CLIENT_ID=mictlanx-sharing-0
+      - SECRET=t0p53cr3T#
+      - XOLO_IP_ADDR=mictlanx-xolo-0
+      - XOLO_PORT=10000
+      - XOLO_MODE=default
+      - BASE_PATH=/mictlanx
+      - LOCAL_PATH=/mictlanx/local
+      - DATA_PATH=/mictlanx/data
+      - LOG_PATH=/mictlanx/log
+    volumes:
+      - '/mictlanx/mictlanx-sharing-0/log:/mictlanx/log'
+      - '/mictlanx/mictlanx-sharing-0/local:/mictlanx/local'
+      - '/mictlanx/mictlanx-sharing-0/data:/mictlanx/data'
+    networks:
+      - mictlanx
+networks:
+  mictlanx:
+    external: true

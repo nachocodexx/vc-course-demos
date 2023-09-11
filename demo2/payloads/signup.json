@@ -1,0 +1,13 @@
+{
+  "app_id":"test_VNEq6RBeiKNyD8wu6WJSI73w2Xajxk6y",
+  "client_id":"mictlanx-sharing-0",
+  "secret":"t0p53cr3T#",
+  "metadata":{
+    "first_name":"Ignacio",
+    "last_name": "Castillo"
+  },
+  "claims":{
+    "role":"god"
+  },
+  "expires_in":1296000
+  }
