@@ -7,19 +7,19 @@ It is a simple qr generator to share whatever you want using a qr code but first
 
 QR Sharing image: 
 ```sh
-	docker build -f Dockerfile_sharing -t <username>/demo2 . 
+docker build -f Dockerfile_sharing -t <username>/demo2 . 
 ```
 Xolo image: 
 ```sh
-	docker build -f Dockerfile_xolo -t <username>/xolo-demo2. 
+docker build -f Dockerfile_xolo -t <username>/xolo-demo2. 
 ```
 
 - 2. Deploy a container using the bash script: 
 ```
-	sudo chmod +x ./demo1.sh && ./demo1.sh
+sudo chmod +x ./demo1.sh && ./demo1.sh
 ```
 - 3. Get the list of all the deployed containers in your computer:
 ```
-	docker ps -a
+docker ps -a
 ```
 
