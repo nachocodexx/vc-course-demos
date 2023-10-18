@@ -1,0 +1,24 @@
+docker run \
+--name sharing-0 \
+-p 16000:16000 \
+-d \
+-e NODE_ID=sharing-0 \
+-e IP_ADDRESS="localhost" \
+-e NODE_PORT="16000" \
+-e SERVER_IP_ADDR="0.0.0.0" \
+-e BASE_PATH="/mictlanx" \
+-e LOCAL_PATH="/mictlanx/local" \
+-e DATA_PATH="/mictlanx/data" \
+-e LOG_PATH="/mictlanx/log" \
+-e API_VERSION="3" \
+-e APPLICATION_ID="APP_ID" \
+-e CLIENT_ID="sharing-0" \
+-e SECRET="SECRET" \
+-e XOLO_IP_ADDR="mictlanx-xolo-0" \
+-e XOLO_PORT="10000" \
+-e XOLO_MODE="off" \
+-v C:\Users\isc_s\Documents\sharing-0/local:/mictlanx/local \
+-v C:\Users\isc_s\Documents\sharing-0/data:/mictlanx/data \
+-v C:\Users\isc_s\Documents\sharing-0/log:/mictlanx/log \
+--network=mictlanx \
+nachocode/demo1

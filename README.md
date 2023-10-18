@@ -16,11 +16,19 @@ After you decompress the ```demos.zip``` you're gonna see the following folder s
 ```bash
 .
 ├── README.md
+├── demo0
+│   ├── Dockerfile
+│   ├── Dockerfile_server
+│   ├── README.md
+│   ├── data
+│   ├── requirements.txt
+│   └── src
 ├── demo1
 │   ├── Dockerfile_sharing
 │   ├── README.md
 │   ├── bin
-│   └── demo1.sh
+│   ├── demo1.sh
+│   └── demo1_v1.sh
 ├── demo2
 │   ├── Dockerfile_sharing
 │   ├── Dockerfile_xolo
@@ -41,11 +49,10 @@ After you decompress the ```demos.zip``` you're gonna see the following folder s
 │   └── docker-compose.yml
 ├── demo5
 │   └── README.md
-├── demos.zip
 └── images
     └── demo1_result.png
 
-9 directories, 20 files
+13 directories, 24 files
 ```
 ## Prerequisites
 You must create a Docker network using the following command:
@@ -68,7 +75,19 @@ git clone git@gitghub.com:nachocodexx/vc-course-demos
 
 
 ## 3. Hands-On
-### Demo 1: First virtual container
+
+### Demo 0: Introduction to docker containers (Web server)
+This demo show you how to create an basic python image and a basic web server using Flask then deploy all the services using docker compose.
+
+All the commands are relative to the /demo0 folder, please ensure that you are in that folder, if you dont then:
+```bash
+cd <PATH>/demo0  
+```
+The ```<PATH>``` is the path where you saved this repo if you dont have the repo please go to the section 2. Download / Clone
+
+Now you are ready to continue this demo is a simple qr generator to share whatever you want using a qr code.
+
+### Demo 1: First virtual container (Sharing)
 All the commands are relative to the /demo1 folder, please ensure that you are in that folder, if you dont then:
 ```bash
 cd <PATH>/demo1  
